@@ -1,4 +1,4 @@
-Sample: 
+Sample (sorry for my 200kbs internet :( ): 
 ![FacebookReaderPHP on terminal](https://github.com/manhdaovan/FacebookReaderPHP/blob/master/others/FBReader.gif "FacebookReaderPHP on terminal")
 
 # Background
