@@ -19,3 +19,6 @@ Login to Facebook and read your news feed without any dependency or configuratio
 4. Read your news feed with command: `$php my_fb_feeds.php`
 
 Hope you fun!
+
+# License
+MIT
