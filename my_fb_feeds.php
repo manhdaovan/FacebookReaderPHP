@@ -37,17 +37,19 @@ if (isset($argv[1]) && ($argv[1] == '-h' || $argv[1] == '--help')) {
 $connector = curl_init();
 $fbReader = new FbReader($connector, $cookie_file);
 
-// Visit homepage to get new cookies
-$fbReader->connect($urlHome);
-Utils::printMsg("Request to -- {$urlHome} -- success!");
+// Skip visit home and login if logged in
+if (empty($afterCursor)) {
+    // Visit homepage to get new cookies
+    $fbReader->connect($urlHome);
+    Utils::printMsg("Request to -- {$urlHome} -- success!");
 
-// Login with given cookies, email/username and password
-$fbReader->login($urlLogin, $login_email, $login_pass);
-Utils::printMsg('Login success!');
+    // Login with given cookies, email/username and password
+    $fbReader->login($urlLogin, $login_email, $login_pass);
+    Utils::printMsg('Login success!');
+}
 
 // Fetch newsfeed content
 $newsfeedContent = $fbReader->read($urlFeed);
-//echo $newsfeedContent;
 
 // Init html parser
 $parser = new FbParser(new simple_html_dom());
